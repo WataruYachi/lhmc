@@ -1,4 +1,4 @@
-# Section2 Primitive Parser
+# Section Primitive Parser
 
 ## 構文解析
 
