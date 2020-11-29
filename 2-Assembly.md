@@ -2,15 +2,17 @@
 
 ## 低レイヤーにつま先を突っ込む
 
-### こんにちは、世界！
+### こんにちは世界
 
 ではまずアセンブリ言語でおなじみのプログラムを書いてみよう。
 
 ```asm:hello.asm
+; samples/section1/hello.asm
+
 global _start
 
 section .data
-message: db 'hello, world', 10
+message: db 'hello, world', 10 ; "hello, world\n"
 
 section .text
 _start:
@@ -24,7 +26,6 @@ _start:
     xor rdi, rdi
     syscall
 ```
-samples/section1/hello.asm
 
 このコードは次のようにコンパイルする。
 
@@ -34,4 +35,8 @@ $ ld -o hello hello.o
 $ chmod u+x hello
 ```
 
-それぞれの意味については後々説明しよう。
+ではプログラムを実行してみよう。
+
+```text
+$ ./hello
+$ hello, world
